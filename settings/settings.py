@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-ALLOWED_HOSTS = ['pure-ravine-10944.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['fake-csv-django.herokuapp.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'suit',
@@ -99,6 +99,10 @@ except ImportError:
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 AWS_LOCATION = 'static'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
