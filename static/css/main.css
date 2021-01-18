@@ -1,0 +1,19 @@
+
+
+.main{
+    min-height: 575px;
+}
+
+.places{
+    margin: 1%;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.current_place{
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 10px 2%;
+    border-radius: 10px;
+    margin-top: 50px;
+}

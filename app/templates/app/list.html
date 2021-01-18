@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Schemas{% endblock %}
+
+{% block content %}
+    <div class="container my-4">
+        <div class="row justify-content-between">
+            <h2>Data Schemas</h2>
+            <div>
+                <a href="{% url 'app:create' %}" type="button" class="btn btn-success">New schema</a>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Modified</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for schema in object_list %}
+                    <tr>
+                        <th scope="row">{{ schema.pk }}</th>
+                        <td><a href="{% url 'app:detail' pk=schema.pk %}">{{ schema.name }}</a></td>
+                        <td>{{ schema.date_modified }}</td>
+                        <td><a href="{% url 'app:update' pk=schema.pk %}" class="text-primary">Edit scheme</a>
+                            <a href="{% url 'app:delete' pk=schema.pk %}" class="ml-2 text-danger">Delete</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>No schemas yet.</tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
