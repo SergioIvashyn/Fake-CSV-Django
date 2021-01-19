@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'storages',
     'corsheaders',
     'crispy_forms',
@@ -20,9 +21,12 @@ INSTALLED_APPS = [
 ]
 
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,7 +74,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = "Europe/Kiev"
 
@@ -96,17 +100,13 @@ try:
 except ImportError:
     from .deployment_settings import *
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
 AWS_LOCATION = 'static'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+AWS_DEFAULT_ACL = None
+STATIC_URL = "htts://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'settings.storage_backends.MediaStorage'

@@ -11,20 +11,19 @@ from services.helpers.faker_factory import Field, FakerFactory
 
 
 class DataSet(models.Model):
-    READY = 'Ready'
-    PROCESSING = 'Processing'
+    READY = 'ready'
+    PROCESSING = 'processing'
 
     STATUS_CHOICES = (
-        (READY, _(READY)),
-        (PROCESSING, _(PROCESSING)),
+        (READY, _(READY.title())),
+        (PROCESSING, _(PROCESSING.title())),
     )
 
     creation_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=30, choices=STATUS_CHOICES, default=PROCESSING)
     row = models.IntegerField(default=1)
     schema_id = models.ForeignKey('DataSchema', on_delete=models.CASCADE)
-    file = models.TextField(blank=True)
-    file_name = models.CharField(max_length=200, blank=True)
+    file = models.FileField(upload_to='data_sets', null=True)
 
     def __str__(self):
         return f"{self.pk}-{self.creation_date}-{self.status}"
@@ -46,8 +45,8 @@ class DataSet(models.Model):
         faker_factory = FakerFactory(fields=self._get_adapted_schema_columns(), rows=self.row)
         for elem in faker_factory.generate():
             writer.writerow(elem)
+        csv_file = ContentFile(csv_buffer.getvalue().encode('utf-8'))
+        self.file.save(filename, csv_file)
         self.status = self.READY
-        self.file = base64.b64encode(csv_buffer.getvalue())
-        self.file_name = filename
         self.save()
         return self
