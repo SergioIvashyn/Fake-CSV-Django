@@ -28,7 +28,7 @@
                 {% for dataset in object.dataset_set.all %}
                     <tr>
                         <th scope="row">{{ dataset.id }}</th>
-                        <td>{{ dataset.creation_date }}</td>
+                        <td>{{ dataset.creation_date_format }}</td>
                         <td><h5><span class="badge
                             {% if dataset.status == 'processing' %}
                             badge-secondary

@@ -1,18 +1,20 @@
-{% extends "base.html" %}
+{% extends "unauthorize.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-        <div class="container">
-            <h5 class="center">Login</h5>
+    <div id="formContent mb-5">
+        <h4 class="center">Login</h4>
+    </div>
+    <div class="fadeIn first">
+
         <form method="POST" class="">
             {% csrf_token %}
                 {{ form|crispy }}
 
-            <div class="form-group center">
+            <div class="form-group float-right">
                 <button class="btn btn-primary justify-content-end" type="submit">
                     Login
                 </button>
             </div>
         </form>
-    </div>
 
 {% endblock content %}

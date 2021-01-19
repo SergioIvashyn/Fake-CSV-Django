@@ -28,6 +28,10 @@ class DataSet(models.Model):
     def __str__(self):
         return f"{self.pk}-{self.creation_date}-{self.status}"
 
+    @property
+    def creation_date_format(self):
+        return self.creation_date.strftime("%Y-%m-%d")
+
     def _get_field_names(self) -> List[str]:
         return [col.name for col in self.schema_id.schemacolumn_set.order_by('order')]
 
@@ -35,7 +39,7 @@ class DataSet(models.Model):
         return [elem.adapted_to_field_faker() for elem in self.schema_id.schemacolumn_set.order_by('order')]
 
     def generate_file(self):
-        filename = f'{datetime.now().strftime("%H:%M:%S_%d.%m.%Y")}_{self.schema_id.name}.csv'
+        filename = f'{datetime.now().strftime("%H-%M-%S__%d.%m.%Y")}_{self.schema_id.name}.csv'
         fieldnames = self._get_field_names()
         csv_buffer = StringIO()
         writer: csv.DictWriter = csv.DictWriter(csv_buffer, fieldnames=fieldnames,

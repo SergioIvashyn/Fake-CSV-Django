@@ -27,5 +27,9 @@ class DataSchema(models.Model):
     string_character = models.CharField(max_length=1, choices=STRING_CHARACTER_CHOICES, default=DOUBLE_QUOTE)
     date_modified = models.DateTimeField(auto_now=True)
 
+    @property
+    def date_modified_format(self):
+        return self.date_modified.strftime("%Y-%m-%d")
+
     def __str__(self):
         return f"{self.pk}-{self.name}"

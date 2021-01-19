@@ -24,7 +24,7 @@
                     <tr>
                         <th scope="row">{{ schema.pk }}</th>
                         <td><a href="{% url 'app:detail' pk=schema.pk %}">{{ schema.name }}</a></td>
-                        <td>{{ schema.date_modified }}</td>
+                        <td>{{ schema.date_modified_format }}</td>
                         <td><a href="{% url 'app:update' pk=schema.pk %}" class="text-primary">Edit scheme</a>
                             <a href="{% url 'app:delete' pk=schema.pk %}" class="ml-2 text-danger">Delete</a></td>
                     </tr>
