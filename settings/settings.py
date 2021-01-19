@@ -106,7 +106,7 @@ STATICFILES_DIRS = (
 
 AWS_LOCATION = 'static'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-AWS_DEFAULT_ACL = None
+AWS_DEFAULT_ACL = ''
 STATIC_URL = "htts://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'settings.storage_backends.MediaStorage'
