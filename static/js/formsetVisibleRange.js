@@ -24,6 +24,7 @@ $(document).ready(function(){
         let orders = $(".order");
         let rangesMin = $(".range_min");
         let rangesMax = $(".range_max");
+        columnViewLogic(columns.length - 1, '');
         $(orders[orders.length - 1]).val(columns.length - 1);
         $(rangesMin[rangesMin.length - 1]).val(0);
         $(rangesMax[rangesMax.length - 1]).val(0);
