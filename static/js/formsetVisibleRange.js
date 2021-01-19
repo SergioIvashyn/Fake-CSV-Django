@@ -1,7 +1,6 @@
 $(document).ready(function(){
     const arrayRangedFieldsValue = ['1', '3'];
     let columns = $(".column_id");
-    $(orders[orders.length - 1]).val(columns.length - 1);
     const columnViewLogic = function (id, value) {
         let rangeMin = $(`#div_id_schemacolumn_set-${id}-range_min`);
         let rangeMax = $(`#div_id_schemacolumn_set-${id}-range_max`);
