@@ -1,5 +1,4 @@
 from django import forms
-from django.forms.models import inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.helper import FormHelper
@@ -28,7 +27,7 @@ class DataSchemaForm(forms.ModelForm):
                 Field('string_character'),
                 Fieldset('Add columns',
                          FormsetLayout('columns_data')),
-                HTML("<br>"),
+                HTML("<br/>"),
                 ButtonHolder(Submit('submit', _('Save'))),
             )
         )

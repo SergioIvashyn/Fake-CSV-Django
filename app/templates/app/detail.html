@@ -30,12 +30,12 @@
                         <th scope="row">{{ dataset.id }}</th>
                         <td>{{ dataset.creation_date }}</td>
                         <td><h5><span class="badge
-                            {% if dataset.status == 'Processing' %}
+                            {% if dataset.status == 'processing' %}
                             badge-secondary
-                            {% elif dataset.status == 'Ready' %}
+                            {% elif dataset.status == 'ready' %}
                             badge-success
                             {% endif %}">
-                        {{ dataset.status }}</span></h5>
+                        {{ dataset.status.title }}</span></h5>
                         </td>
                         <td>{% if dataset.file %}<a href="{{ dataset.file.url }}" download>Download</a>{% endif %}</td>
                     </tr>

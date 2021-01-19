@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-{% load i18n %}
 {% block content %}
     <div class="container">
-    <h2>{% trans "You have been logged out" %}</h2>
+    <h2>You have been logged out</h2>
 
         <small class="text-muted ">
-            <a class='waves-effect waves-light btn' href="{% url 'login' %}"><i class="material-icons right">input</i>{% trans "Log In Again" %}</a>
+            <a class='waves-effect waves-light btn' href="{% url 'login' %}"><i class="material-icons right">input</i>Log In Again</a>
         </small>
     </div>
 {% endblock content %}

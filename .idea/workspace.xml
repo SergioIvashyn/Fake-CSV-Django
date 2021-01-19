@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc561f76-f426-4e43-a26c-e4fe4b1a29c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ivash.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/schema_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/schema_column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/formset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/components/data_schema/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/components/data_schema/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/components/schema_column/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/components/schema_column/form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery.formset.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.formset.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -67,6 +78,8 @@
       <workItem from="1610995580923" duration="5496000" />
       <workItem from="1611037190806" duration="640000" />
       <workItem from="1611038340642" duration="1622000" />
+      <workItem from="1611041369761" duration="9343000" />
+      <workItem from="1611066639605" duration="4907000" />
     </task>
     <servers />
   </component>

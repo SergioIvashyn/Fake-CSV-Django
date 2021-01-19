@@ -22,7 +22,7 @@ class SchemaColumn(models.Model):
                 options["min_value"] = self.range_min
                 options["max_value"] = self.range_max
             else:
-                options["nb_words"] = randint(self.range_min, self.range_max)
+                options["nb_words"] = abs(randint(self.range_min, self.range_max))
         return Field(field=self.name, faker_type=self.column_id.type_name, options=options)
 
     def clean(self):
