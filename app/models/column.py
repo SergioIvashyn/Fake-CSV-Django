@@ -19,7 +19,7 @@ class Column(models.Model):
     is_number = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.pk}-{self.type_name}"
+        return f"{dict(self.TYPE_NAME_CHOICES)[self.type_name]}"
 
     def clean(self):
         if all([self.is_number, not self.is_ranged]):
