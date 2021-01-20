@@ -214,7 +214,6 @@
                 row.find(childElementSelector).each(function() {
                     updateElementIndex($(this), options.prefix, formCount);
                 });
-
                 totalForms.val(formCount + 1);
                 // Check if we're above the minimum allowed number of forms -> show all delete link(s)
                 if (showDeleteLinks()){
@@ -235,8 +234,8 @@
     $.fn.formset.defaults = {
         prefix: 'form',                  // The form prefix for your django formset
         formTemplate: null,              // The jQuery selection cloned to generate new form instances
-        addText: 'add another',          // Text for the add link
-        deleteText: 'remove',            // Text for the delete link
+        addText: 'Add column',          // Text for the add link
+        deleteText: 'Delete',            // Text for the delete link
         addContainerClass: null,         // Container CSS class for the add link
         deleteContainerClass: null,      // Container CSS class for the delete link
         addCssClass: 'add-row',          // CSS class applied to the add link

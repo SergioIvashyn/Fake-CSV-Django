@@ -18,10 +18,12 @@ from django.urls import path
 from django.urls import include
 from django.contrib.auth import views as auth_views
 
+from services.components.user import UserLoginForm
 
 urlpatterns = [
     path('', include('app.urls')),
-    path('login/', auth_views.LoginView.as_view(template_name='app/login.html'), name='login'),
+    path('login/', auth_views.LoginView.as_view(template_name='app/login.html',
+                                                authentication_form=UserLoginForm), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='app/logout.html'), name='logout'),
     path('admin/', admin.site.urls),
 ]

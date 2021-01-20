@@ -1,6 +1,12 @@
 $(document).ready(function(){
     const arrayRangedFieldsValue = ['1', '3'];
     let columns = $(".column_id");
+    let addButton = $(".add-row");
+    let deleteButton = $(".delete-row");
+
+    addButton.addClass('mt-2 btn btn-primary');
+    $('#div_id_string_character, #div_id_column_separator, #div_id_name').removeClass('row');
+
     const columnViewLogic = function (id, value) {
         let rangeMin = $(`#div_id_schemacolumn_set-${id}-range_min`);
         let rangeMax = $(`#div_id_schemacolumn_set-${id}-range_max`);
@@ -19,16 +25,7 @@ $(document).ready(function(){
             columnViewLogic($(value).attr('id').split('-')[1], $(value).val());
         });
     };
-
-    const renderLastInputs = function(){
-        let orders = $(".order");
-        let rangesMin = $(".range_min");
-        let rangesMax = $(".range_max");
-        columnViewLogic(columns.length - 1, '');
-        $(orders[orders.length - 1]).val(columns.length - 1);
-        $(rangesMin[rangesMin.length - 1]).val(0);
-        $(rangesMax[rangesMax.length - 1]).val(0);
-    };
+    renderColumns();
 
     const handleColumnChange = function(){
         columns = $(".column_id");
@@ -37,17 +34,30 @@ $(document).ready(function(){
             renderColumns();
         });
     };
-
     handleColumnChange();
-    renderLastInputs();
 
-    renderColumns();
-    $(".add-row").on('click', function () {
+    const renderLastFormSetElement = function(){
+        deleteButton = $(".delete-row");
+
+        $(deleteButton[deleteButton.length - 1]).on('click', function () {
+            handleColumnChange();
+        });
+    };
+
+    deleteButton.on('click', function () {
         handleColumnChange();
-        renderLastInputs();
     });
 
-    $(".delete-row").on('click', function () {
+    const renderLastInputs = function(){
+        columns = $(".column_id");
+        columnViewLogic(columns.length - 1, '');
+    };
+
+    renderLastInputs();
+
+    addButton.on('click', function () {
         handleColumnChange();
+        renderLastInputs();
+        renderLastFormSetElement();
     });
 });
