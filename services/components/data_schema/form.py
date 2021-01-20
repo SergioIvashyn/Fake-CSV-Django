@@ -21,13 +21,11 @@ class DataSchemaForm(forms.ModelForm):
         self.helper.label_class = 'col-md-3 create-label'
         self.helper.field_class = 'col-md-9'
         self.helper.layout = Layout(
+            ButtonHolder(Submit('submit', _('Submit')), css_class='text-right mb-2'),
             Div(
                 Field('name'),
                 Field('column_separator'),
                 Field('string_character'),
-                Fieldset('Add columns',
-                         FormsetLayout('columns_data')),
-                HTML("<br/>"),
-                ButtonHolder(Submit('submit', _('Save'))),
+                Fieldset('Schema columns', FormsetLayout('columns_data')),
             )
         )
