@@ -1,18 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Edit Schema{% endblock %}
+
+{% block title %}Update Schema{% endblock %}
 
 {% block content %}
     <div class="container">
-        <div class="card mt-4">
-            <div class="card-header">
-                Update schema
-            </div>
-            <div class="card-body">
-                {% load crispy_forms_tags %}
-                {% crispy form %}
-            </div>
-        </div>
+        <h2>Update schema</h2>
+            {% load crispy_forms_tags %}
+            {% crispy form %}
     </div>
+
 {% endblock %}
 {% block javascript %}
 {% load static %}

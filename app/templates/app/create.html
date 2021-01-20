@@ -4,15 +4,9 @@
 
 {% block content %}
     <div class="container">
-        <div class="card mt-4">
-            <div class="card-header">
-                Create schema
-            </div>
-            <div class="card-body">
-                {% load crispy_forms_tags %}
-                {% crispy form %}
-            </div>
-        </div>
+        <h2> New schema</h2>
+            {% load crispy_forms_tags %}
+            {% crispy form %}
     </div>
 
 {% endblock %}

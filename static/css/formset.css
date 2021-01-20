@@ -1,0 +1,7 @@
+tr.formset_row-schemacolumn_set td{
+    padding:0 10px;
+}
+
+.delete-row{
+    color: #dc3545;
+}
