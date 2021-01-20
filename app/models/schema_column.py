@@ -15,16 +15,6 @@ class SchemaColumn(models.Model):
     range_max = models.IntegerField(default=0)
     order = models.IntegerField(default=0)
 
-    def adapted_to_field_faker(self):
-        options = {}
-        if self.column_id.is_ranged:
-            if self.column_id.is_number:
-                options["min_value"] = self.range_min
-                options["max_value"] = self.range_max
-            else:
-                options["nb_words"] = abs(randint(self.range_min, self.range_max))
-        return Field(field=self.name, faker_type=self.column_id.type_name, options=options)
-
     def clean(self):
         if self.range_min > self.range_max:
             raise ValidationError(_("\"Min\" value is greater than \"Max\""))
