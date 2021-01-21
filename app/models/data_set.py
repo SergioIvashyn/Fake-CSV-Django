@@ -13,7 +13,7 @@ class DataSet(models.Model):
 
     creation_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=30, choices=STATUS_CHOICES, default=PROCESSING)
-    row = models.IntegerField(default=1)
+    row = models.PositiveIntegerField(default=1)
     schema_id = models.ForeignKey('DataSchema', on_delete=models.CASCADE)
     file = models.FileField(upload_to='data_sets', null=True)
 
