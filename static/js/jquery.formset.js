@@ -215,6 +215,7 @@
                 row.find(childElementSelector).each(function() {
                     updateElementIndex($(this), options.prefix, formCount);
                 });
+                row.find('input[type=number]').val(0);
                 totalForms.val(formCount + 1);
                 // Check if we're above the minimum allowed number of forms -> show all delete link(s)
                 if (showDeleteLinks()){
