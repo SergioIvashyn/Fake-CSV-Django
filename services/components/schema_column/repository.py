@@ -1,4 +1,4 @@
-from typing import List, Type
+from typing import List
 
 from app.models import SchemaColumn, DataSchema
 from services.helpers.repository import Repository

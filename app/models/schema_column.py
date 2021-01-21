@@ -1,10 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-
-from services.helpers.faker_factory import Field
 from django.utils.translation import ugettext_lazy as _
-
-from random import randint
 
 
 class SchemaColumn(models.Model):
